@@ -1,0 +1,99 @@
+<app-toolbar (toggleSidenav)="toggleNav()"></app-toolbar>
+
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav class="sidenavbg" opened [mode]="over ? 'over' : 'side'">
+    <!-- Large Nav -->
+    <mat-list id="sidenav1" class="large-list" [class.hide]="nav1">
+      <a href="{{folder.target}}" *ngFor="let folder of Main">
+        <mat-list-item
+        class="large-list-item"
+        [title]="folder.name"
+      >
+        <mat-icon mat-list-icon >
+          {{ folder.icon }}
+        </mat-icon>
+        <div mat-line>{{ folder.name }}</div>
+      </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <a href="{{note.target}}" *ngFor="let note of SubMain">
+        <mat-list-item
+        class="large-list-item"
+        [title]="note.name"
+      >
+        <mat-icon mat-list-icon>
+          {{ note.icon }}
+        </mat-icon>
+        <div mat-line>{{ note.name }}</div>
+      </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <div class="lable" mat-subheader>SUBSCRIPTIONS</div>
+      <a href="{{ channel.chUrl }}" *ngFor="let channel of channels">
+        <mat-list-item class="large-list-item" [title]="channel.subtitle1">
+          <mat-icon mat-list-icon>
+            <img src="{{ channel.roundedImg }}" />
+          </mat-icon>
+          <div mat-line>{{ channel.subtitle1 }}</div>
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <div class="lable" mat-subheader>MORE FROM YOUTUBE</div>
+      <a href="note.target" *ngFor="let note of MoreFromYoutube">
+        <mat-list-item
+        class="large-list-item"
+        [title]="note.name"
+      >
+        <mat-icon mat-list-icon class="material-icons-outlined">
+          {{ note.icon }}
+        </mat-icon>
+        <div mat-line>{{ note.name }}</div>
+      </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <a href="{{note.target}}" *ngFor="let note of Settings">
+        <mat-list-item
+        class="large-list-item"
+        [title]="note.name"
+      >
+        <mat-icon mat-list-icon>
+          {{ note.icon }}
+        </mat-icon>
+        <div mat-line>{{ note.name }}</div>
+      </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <p>About Press Copyright Contact us Creator Advertise Developers</p>
+      <p>Terms Privacy Policy & SafetyHow YouTube worksTest new features</p>
+      <p class="little">© 2022 Moataz Hamdy LLC</p>
+    </mat-list>
+
+    <!-- Small nav -->
+    <mat-list id="sidenav2" class="small-list" [class.hide]="!nav1">
+      <div
+        class="Small-list-item"
+        *ngFor="let folder of Main"
+        [title]="folder.name"
+      >
+        <mat-icon mat-list-icon>
+          {{ folder.icon }}
+        </mat-icon>
+        <div>{{ folder.name }}</div>
+      </div>
+      <div
+        class="Small-list-item"
+        *ngFor="let note of SubMain"
+        [title]="note.name"
+      >
+        <mat-icon mat-list-icon>
+          {{ note.icon }}
+        </mat-icon>
+        <div>{{ note.name }}</div>
+      </div>
+    </mat-list>
+  </mat-sidenav>
+
+  <div class="sidenav-content">
+    <app-main-content></app-main-content>
+  </div>
+</mat-sidenav-container>

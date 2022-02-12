@@ -1,0 +1,18 @@
+.snack {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  .section1 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    p {
+      margin: 0 5px 0 0 !important;
+    }
+  }
+}
+.mat-snack-bar-container{
+  background-color: #212121;
+
+}

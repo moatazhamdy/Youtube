@@ -1,0 +1,66 @@
+<div class="second-toolbar">
+  <mat-divider></mat-divider>
+
+  <div class="chips">
+    <button
+      mat-flat-button
+      class="chip1"
+      *ngFor="let chip of Names"
+      [title]="chip.name">
+      {{ chip.name }}
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>
+<div class="content">
+  <mat-card class="example-card" *ngFor="let video of videos">
+    <a class="img-cover" href="{{ video.url }}">
+      <p>{{ video.time }}</p>
+      <img src="{{ video.coverImg }}" alt="Cover Image" />
+    </a>
+    <mat-card-header class="header">
+      <a href="{{ video.chUrl }}" mat-card-avatar>
+        <img
+          class="rounded-img"
+          src="{{ video.roundedImg }}"
+          [title]="video.subtitle1"
+          alt="Channel Image"
+        />
+      </a>
+
+      <button class="menu-btn" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="mat-menu">
+        <button
+        mat-menu-item
+        *ngFor="let section of Section1"
+        (click)="openSnackBar()"
+        >
+        <mat-icon id="icon">{{ section.icon }}</mat-icon>
+        <span>{{ section.name }}</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button
+      mat-menu-item
+      *ngFor="let section of Section2"
+      (click)="openSnackBar()"
+      >
+      <mat-icon>{{ section.icon }}</mat-icon>
+      <span>{{ section.name }}</span>
+    </button>
+  </mat-menu>
+  <mat-card-title>
+    <a href="{{ video.url }}" [title]="video.title"> {{ video.title }}</a>
+  </mat-card-title>
+      <mat-card-subtitle>
+        <a href="{{ video.chUrl }}" [title]="video.subtitle1">
+          {{ video.subtitle1 }}
+        </a>
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>{{ video.subtitle2 }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>

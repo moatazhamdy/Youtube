@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <button class="toggle" mat-icon-button (click)="toggleSidenav.emit()">
+    <mat-icon style="padding-bottom: 29px">menu</mat-icon>
+  </button>
+
+  <a href="index.html" class="logo">
+    <img src="../assets/logo.svg" />
+  </a>
+  <div class="search">
+    <div class="search-bar" [class.full]="isScreenSmall">
+      <input type="text" placeholder="Search" />
+      <button class="search-btn">
+        <mat-icon class="search-icon">search</mat-icon>
+      </button>
+    </div>
+    <button mat-icon-button class="mic-btn" [class.hide]="isScreenSmall">
+      <span class="material-icons"> mic </span>
+    </button>
+  </div>
+  <div class="icons-div">
+    <div class="icons" [class.hide]="isScreenSmall">
+      <button mat-icon-button class="example-icon">
+        <mat-icon> video_call </mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon">
+        <mat-icon> apps </mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon">
+        <mat-icon matBadge="9" matBadgeColor="warn"> notifications </mat-icon>
+      </button>
+    </div>
+    <button mat-icon-button class="example-icon" style="align-self: center">
+      <img class="rounded-full" src="../assets/profile.jpg" />
+    </button>
+  </div>
+</mat-toolbar>

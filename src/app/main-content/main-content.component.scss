@@ -1,0 +1,129 @@
+.second-toolbar {
+  position: fixed;
+  z-index: 50;
+  background-color: #202020fa;
+  width: 100%;
+}
+.chips {
+  margin: 11px 16px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.chip1 {
+  width: fit-content !important;
+  line-height: 27px !important;
+  margin: 0 5px !important;
+  flex: none;
+  text-overflow: ellipsis; // to make dots at the end
+  overflow: hidden !important; // to make dots at the end
+  max-width: 204px;
+  min-width: 44px !important;
+  font-size: 13px;
+  font-weight: normal;
+  background-color: #373737;
+  border: solid 1px #59595954 !important;
+  border-radius: 18px !important;
+  padding: 2px 12px !important;
+}
+.content {
+  margin: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.example-card {
+  width: 290px;
+  margin: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  flex: 1 1 auto;
+  box-shadow: 0 0 !important;
+  padding: 0 !important;
+  .rounded-img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .img-cover {
+    margin-bottom: 1rem;
+    min-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    p {
+      position: absolute;
+      padding: 0.5px 4px;
+      margin: 0 4px 4px;
+      border-radius: 2px;
+      font-size: smaller;
+      font-weight: 500;
+      background-color: #000000cc;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .header{
+    display: flex;
+    position: relative;
+  }
+  mat-card-title {
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+  }
+  .menu-btn{
+    right: -12px;
+    top: -12px;
+    position: absolute;
+    display: none;
+  }
+  a {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  mat-card-subtitle {
+    margin-bottom: 5px !important;
+    color: #8b8e94 !important;
+    font-size: 12px;
+    text-decoration: none;
+
+    a {
+      color: #8b8e94 !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.example-card:hover{
+  .menu-btn{
+    display: inline-block;
+  }
+  .menu-btn:active {
+    border: solid .5px white;
+  }
+}
+.mat-menu{
+  button{
+    font-size: small;
+  }
+}
+
+.chips::-webkit-scrollbar {   //hide scrollbar but still working
+  display: none;
+}
+
+//  .chips:hover { overflow-x: scroll;}  // show scrollbar only when hover on the div
+
+::ng-deep .mat-menu-panel {
+  background-color: #212121 !important;
+}
+.mat-flat-button:focus{
+  background-color: white;
+  color: #212121;
+}
+

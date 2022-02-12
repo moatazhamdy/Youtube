@@ -1,0 +1,5 @@
+[
+  { "name": "Add to queue", "icon": "add_to_queue", "target": "" },
+  { "name": "Save to Watch Later", "icon": "watch_later", "target": "" },
+  { "name": "Save to playlist", "icon": "playlist_add", "target": "" }
+]
